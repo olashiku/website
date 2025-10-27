@@ -5,6 +5,7 @@ import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
 import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
+import AnimatedSection from "@/components/AnimatedSection";
 import { TrendingUp, Users, BarChart3, Megaphone, Target } from "lucide-react";
 import heroImage from '@assets/generated_images/Modern_luxury_home_hero_1e61facd.png';
 import testimonial1 from '@assets/generated_images/Professional_woman_headshot_portrait_64c6baf6.png';
@@ -76,22 +77,23 @@ export default function Home() {
       {/* Services Preview */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Comprehensive real estate solutions tailored to your needs
             </p>
-          </div>
+          </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {services.map((service) => (
-              <ServiceCard
-                key={service.title}
-                icon={service.icon}
-                title={service.title}
-                description={service.description}
-                ctaText="Learn More"
-                ctaHref="/services"
-              />
+            {services.map((service, index) => (
+              <AnimatedSection key={service.title} delay={index * 100}>
+                <ServiceCard
+                  icon={service.icon}
+                  title={service.title}
+                  description={service.description}
+                  ctaText="Learn More"
+                  ctaHref="/services"
+                />
+              </AnimatedSection>
             ))}
           </div>
         </div>
@@ -100,55 +102,59 @@ export default function Home() {
       {/* Value Proposition */}
       <section className="py-24 bg-accent/50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
+          <AnimatedSection className="max-w-4xl mx-auto text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               Why Choose Rock City Home?
             </h2>
             <p className="text-xl text-muted-foreground">
               We revolutionize real estate marketing by creating meaningful connections between buyers, sellers, agents, and developers.
             </p>
-          </div>
+          </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-6">
+            <AnimatedSection className="text-center" delay={100}>
+              <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-6 transition-transform duration-300 hover:scale-110">
                 <Target className="text-primary" size={32} />
               </div>
               <h3 className="font-semibold text-xl mb-3">Strategic Marketing</h3>
               <p className="text-muted-foreground">Data-driven strategies that deliver real results for every property</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-6">
+            </AnimatedSection>
+            <AnimatedSection className="text-center" delay={200}>
+              <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-6 transition-transform duration-300 hover:scale-110">
                 <Users className="text-primary" size={32} />
               </div>
               <h3 className="font-semibold text-xl mb-3">Expert Network</h3>
               <p className="text-muted-foreground">Access to top professionals and opportunities in the industry</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-6">
+            </AnimatedSection>
+            <AnimatedSection className="text-center" delay={300}>
+              <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-6 transition-transform duration-300 hover:scale-110">
                 <BarChart3 className="text-primary" size={32} />
               </div>
               <h3 className="font-semibold text-xl mb-3">Proven Results</h3>
               <p className="text-muted-foreground">Track record of successful transactions and satisfied clients</p>
-            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
       {/* Stats Section */}
-      <StatsSection />
+      <AnimatedSection>
+        <StatsSection />
+      </AnimatedSection>
 
       {/* Testimonials */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">What Our Clients Say</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Real stories from satisfied clients and partners
             </p>
-          </div>
+          </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.author} {...testimonial} />
+            {testimonials.map((testimonial, index) => (
+              <AnimatedSection key={testimonial.author} delay={index * 150}>
+                <TestimonialCard {...testimonial} />
+              </AnimatedSection>
             ))}
           </div>
         </div>
