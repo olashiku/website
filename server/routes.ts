@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { insertContactSubmissionSchema } from "@shared/schema";
+import { ZodError } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Contact form submission endpoint
@@ -16,22 +17,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
         id: submission.id 
       });
     } catch (error) {
+      if (error instanceof ZodError) {
+        console.error("Contact form validation error:", error.errors);
+        return res.status(400).json({ 
+          success: false, 
+          message: "Please check your information and try again.",
+          errors: error.errors 
+        });
+      }
+      
       console.error("Contact form submission error:", error);
-      res.status(400).json({ 
+      res.status(500).json({ 
         success: false, 
-        message: "Failed to submit contact form. Please check your information and try again." 
+        message: "An error occurred while submitting your request. Please try again later." 
       });
-    }
-  });
-
-  // Get all contact submissions (for admin purposes)
-  app.get("/api/contact", async (req, res) => {
-    try {
-      const submissions = await storage.getAllContactSubmissions();
-      res.json(submissions);
-    } catch (error) {
-      console.error("Error fetching contact submissions:", error);
-      res.status(500).json({ error: "Failed to fetch contact submissions" });
     }
   });
 
