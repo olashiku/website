@@ -1,0 +1,152 @@
+# Website Generation Prompt for RockCityHome.com
+
+## Project Brief
+Create a professional, modern real estate marketing and networking website called **RockCityHome.com**. This is a digital platform that connects property buyers, sellers, agents, and developers, serving as a hub for real estate marketing solutions and professional networking.
+
+## Design Requirements
+
+### Visual Style
+- **Theme**: Clean, modern, real-estate inspired design
+- **Color Scheme**: White background with gold or navy blue accents
+- **Typography**: Professional sans-serif fonts (modern and readable)
+- **Layout**: Fully responsive (mobile, tablet, and desktop friendly)
+- **Imagery**: High-quality real estate visuals including properties, professional people, and networking scenes
+- **CTA Buttons**: Prominent and clear with calls-to-action like "Contact Us", "Learn More", "Get Started"
+
+### Overall Aesthetic
+Create a website that communicates credibility, professionalism, and trustworthiness while maintaining a welcoming, user-friendly interface.
+
+## Website Structure & Pages
+
+### 1. HOME PAGE
+**Purpose**: Introduce Rock City Home and highlight key services
+
+**Content Elements**:
+- Hero banner with compelling headline about real estate marketing excellence
+- Brief introduction text explaining what Rock City Home does
+- Services preview section (3-4 key services with icons)
+- "Why Choose Us" or value proposition section
+- Testimonials or trust indicators
+- Strong contact CTA
+- Footer with contact info and social links
+
+**Suggested Hero Headlines**:
+- "Your Trusted Partner in Real Estate Marketing"
+- "Connecting Property Dreams with Perfect Solutions"
+- "Elevating Real Estate Through Strategic Marketing"
+
+### 2. ABOUT US PAGE
+**Purpose**: Describe company background and mission
+
+**Content Elements**:
+- Company story section
+- Mission statement: "To revolutionize real estate marketing by creating meaningful connections between buyers, sellers, agents, and developers"
+- Core values (e.g., Integrity, Innovation, Excellence, Client-Focused)
+- Team section with professional photos and roles
+- Years of experience or key achievements
+- Vision statement
+
+### 3. SERVICES PAGE
+**Purpose**: Explain real estate marketing and networking services offered
+
+**Content Elements**:
+List these services with icons and descriptions:
+- Property Marketing & Promotion
+- Real Estate Agent Networking
+- Buyer-Seller Connections
+- Market Analysis & Consultation
+- Digital Marketing Solutions
+- Property Listing Services
+- Investment Opportunity Matching
+- Real Estate Event Coordination
+
+Each service should have a brief description and a CTA button.
+
+### 4. PROPERTY NETWORK PAGE (Optional)
+**Purpose**: Showcase property listings or network partners
+
+**Content Elements**:
+- Grid layout of property listings or featured properties
+- Filter options (property type, location, price range)
+- Property cards with images, brief details, and "Learn More" buttons
+- Partner logos or featured agents section
+- "Join Our Network" CTA for agents/developers
+
+### 5. CONTACT US PAGE
+**Purpose**: Make it easy for visitors to reach out
+
+**Content Elements**:
+- Contact form with fields: Name, Email, Phone, Message, Service Interest
+- Contact information:
+  - Email: info@rockcityhome.com
+  - Phone: [To be provided]
+  - Address: [To be provided]
+- Embedded Google Map (placeholder)
+- Social media links (LinkedIn, Instagram, Facebook, Twitter)
+- Operating hours
+- "We'd love to hear from you" welcoming message
+
+### 6. BLOG/INSIGHTS PAGE (Optional)
+**Purpose**: Share real estate marketing tips and industry insights
+
+**Content Elements**:
+- Blog post grid layout
+- Sample article titles like:
+  - "5 Tips for Marketing Your Property Effectively"
+  - "Understanding Real Estate Market Trends in 2025"
+  - "How to Choose the Right Real Estate Agent"
+- Categories: Marketing Tips, Market Trends, Success Stories, Industry News
+
+## Navigation Menu
+Include these items in the header:
+1. Home
+2. About Us
+3. Services
+4. Property Network (or "Network")
+5. Contact Us
+6. Blog/Insights (optional)
+
+## Call-to-Action Strategy
+Place these CTAs strategically throughout the site:
+- **"Request a Consultation"** - Home page hero, Services page
+- **"Join Our Network"** - Footer, Property Network page
+- **"List Your Property"** - Services page, Property Network page
+- **"Get In Touch"** - Bottom of every page
+
+## Target Audience Considerations
+Design with these users in mind:
+- Real estate agents and developers
+- Property buyers and sellers
+- Homeowners seeking marketing exposure
+- Real estate investors and network partners
+
+The design should feel professional enough for industry experts while remaining accessible to first-time home buyers.
+
+## Technical Features to Include
+- Smooth scrolling and modern animations
+- Mobile-first responsive design
+- Fast loading times
+- Contact form functionality
+- Social media integration
+- Placeholder for Google Maps
+- Modern UI elements (hover effects, transitions)
+
+## Content Tone
+- Professional yet approachable
+- Confident and trustworthy
+- Solution-focused
+- Clear and concise
+- Action-oriented
+
+## Additional Notes
+- Use placeholder images from real estate contexts (modern homes, agents, handshakes, city skylines)
+- Include space for company logo in header
+- Ensure all contact forms are prominent and easy to use
+- Design should inspire confidence and trust
+- Emphasize the networking and connection aspects of the business
+
+**Primary Goal**: Create a clear, modern, and user-friendly website that effectively communicates Rock City Home's services, establishes credibility, and generates quality leads through strategic contact points.
+
+---
+
+**Generate a complete, functional, beautiful website based on these specifications. Make it visually stunning with smooth interactions, professional imagery concepts, and a design that would impress potential clients in the real estate industry.**
