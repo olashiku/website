@@ -7,7 +7,7 @@ export default function Footer() {
     { path: "/", label: "Home" },
     { path: "/about", label: "About Us" },
     { path: "/services", label: "Services" },
-    { path: "/network", label: "Property Network" },
+    { path: "/contact", label: "Contact Us" },
   ];
 
   const services = [
@@ -32,9 +32,9 @@ export default function Footer() {
             <p className="text-secondary-foreground/80 mb-4">
               Your trusted partner in real estate marketing and professional networking.
             </p>
-            <Link href="/network">
+            <Link href="/contact" asChild>
               <Button variant="outline" className="bg-transparent border-secondary-foreground/20 text-secondary-foreground hover:bg-secondary-foreground/10" data-testid="button-join-network">
-                Join Our Network
+                Get In Touch
               </Button>
             </Link>
           </div>
@@ -45,10 +45,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.path}>
-                  <Link href={link.path}>
-                    <a className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors" data-testid={`footer-link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}>
-                      {link.label}
-                    </a>
+                  <Link 
+                    href={link.path}
+                    className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors" 
+                    data-testid={`footer-link-${link.label.toLowerCase().replace(/\s+/g, '-')}`}
+                  >
+                    {link.label}
                   </Link>
                 </li>
               ))}

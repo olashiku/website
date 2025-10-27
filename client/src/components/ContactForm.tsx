@@ -1,6 +1,7 @@
-import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
+import { insertContactSubmissionSchema } from "@shared/schema";
 import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,23 +22,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { apiRequest } from "@/lib/queryClient";
 
-const contactFormSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Invalid email address"),
-  phone: z.string().min(10, "Phone number must be at least 10 digits"),
-  serviceInterest: z.string().min(1, "Please select a service"),
-  message: z.string().min(10, "Message must be at least 10 characters"),
-});
-
-type ContactFormValues = z.infer<typeof contactFormSchema>;
+type ContactFormValues = z.infer<typeof insertContactSubmissionSchema>;
 
 export default function ContactForm() {
   const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<ContactFormValues>({
-    resolver: zodResolver(contactFormSchema),
+    resolver: zodResolver(insertContactSubmissionSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -47,20 +40,29 @@ export default function ContactForm() {
     },
   });
 
-  const onSubmit = async (data: ContactFormValues) => {
-    setIsSubmitting(true);
-    console.log("Form submitted:", data);
-    
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
-    
-    form.reset();
-    setIsSubmitting(false);
+  const submitMutation = useMutation({
+    mutationFn: async (data: ContactFormValues) => {
+      const response = await apiRequest("POST", "/api/contact", data);
+      return await response.json();
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message Sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      form.reset();
+    },
+    onError: () => {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again.",
+        variant: "destructive",
+      });
+    },
+  });
+
+  const onSubmit = (data: ContactFormValues) => {
+    submitMutation.mutate(data);
   };
 
   return (
@@ -159,8 +161,8 @@ export default function ContactForm() {
           )}
         />
 
-        <Button type="submit" size="lg" className="w-full" disabled={isSubmitting} data-testid="button-submit">
-          {isSubmitting ? "Sending..." : "Send Message"}
+        <Button type="submit" size="lg" className="w-full" disabled={submitMutation.isPending} data-testid="button-submit">
+          {submitMutation.isPending ? "Sending..." : "Send Message"}
         </Button>
       </form>
     </Form>
