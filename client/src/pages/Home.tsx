@@ -7,11 +7,11 @@ import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Building2, Hammer, Home as HomeIcon, FileText, Target, Users, BarChart3 } from "lucide-react";
-import heroImage from '@assets/generated_images/Modern_luxury_home_hero_1e61facd.png';
+import heroImage from '@assets/generated_images/Construction_development_hero_image_66cd83fa.png';
 import testimonial1 from '@assets/generated_images/Professional_woman_headshot_portrait_64c6baf6.png';
 import testimonial2 from '@assets/generated_images/Professional_man_headshot_portrait_c65913d1.png';
 import testimonial3 from '@assets/generated_images/Smiling_professional_woman_headshot_e4d46485.png';
-import ctaBg from '@assets/generated_images/City_skyline_sunset_panorama_a266ea56.png';
+import ctaBg from '@assets/generated_images/Land_development_aerial_view_2a250fe3.png';
 
 export default function Home() {
   const services = [
@@ -39,19 +39,19 @@ export default function Home() {
 
   const testimonials = [
     {
-      quote: "Rock City Home helped us sell our property in record time. Their marketing expertise and professional network made all the difference.",
+      quote: "Rock City Home managed our entire construction project from permits to completion. Their professionalism and attention to detail exceeded our expectations.",
       author: "Sarah Johnson",
       role: "Property Owner",
       avatar: testimonial1,
     },
     {
-      quote: "As a real estate agent, joining their network has been transformative for my business. The quality of leads and support is exceptional.",
+      quote: "Their estate management services have been outstanding. Our properties are well-maintained and tenants are always satisfied. Highly recommend!",
       author: "Michael Chen",
-      role: "Real Estate Agent",
+      role: "Real Estate Developer",
       avatar: testimonial2,
     },
     {
-      quote: "Their market analysis gave us the insights we needed to make informed investment decisions. Highly professional and reliable.",
+      quote: "The land documentation and surveying services saved us months of hassle. They handled everything efficiently and professionally.",
       author: "Emily Rodriguez",
       role: "Property Investor",
       avatar: testimonial3,
@@ -65,12 +65,12 @@ export default function Home() {
       {/* Hero Section */}
       <div className="pt-20">
         <HeroSection
-          title="Your Trusted Partner in Real Estate Marketing"
-          subtitle="Connecting Property Dreams with Perfect Solutions"
+          title="Building Your Dreams, Managing Your Assets"
+          subtitle="Complete Construction, Development & Property Management Solutions"
           primaryCta={{ text: "Request Consultation", href: "/contact" }}
           secondaryCta={{ text: "View Services", href: "/services" }}
           backgroundImage={heroImage}
-          trustIndicator="Trusted by 500+ agents and developers"
+          trustIndicator="Your trusted partner in real estate development"
         />
       </div>
 
@@ -107,30 +107,30 @@ export default function Home() {
               Why Choose Rock City Home?
             </h2>
             <p className="text-xl text-muted-foreground">
-              We revolutionize real estate marketing by creating meaningful connections between buyers, sellers, agents, and developers.
+              We deliver comprehensive construction, development, and property management solutions with expertise, quality, and commitment to excellence.
             </p>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             <AnimatedSection className="text-center" delay={100}>
               <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-6 transition-transform duration-300 hover:scale-110">
-                <Target className="text-primary" size={32} />
+                <Building2 className="text-primary" size={32} />
               </div>
-              <h3 className="font-semibold text-xl mb-3">Strategic Marketing</h3>
-              <p className="text-muted-foreground">Data-driven strategies that deliver real results for every property</p>
+              <h3 className="font-semibold text-xl mb-3">Complete Solutions</h3>
+              <p className="text-muted-foreground">From land acquisition to construction completion - we handle it all</p>
             </AnimatedSection>
             <AnimatedSection className="text-center" delay={200}>
               <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-6 transition-transform duration-300 hover:scale-110">
-                <Users className="text-primary" size={32} />
+                <Target className="text-primary" size={32} />
               </div>
-              <h3 className="font-semibold text-xl mb-3">Expert Network</h3>
-              <p className="text-muted-foreground">Access to top professionals and opportunities in the industry</p>
+              <h3 className="font-semibold text-xl mb-3">Quality Focused</h3>
+              <p className="text-muted-foreground">Superior workmanship and materials in every project we undertake</p>
             </AnimatedSection>
             <AnimatedSection className="text-center" delay={300}>
               <div className="w-16 h-16 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-6 transition-transform duration-300 hover:scale-110">
-                <BarChart3 className="text-primary" size={32} />
+                <Users className="text-primary" size={32} />
               </div>
-              <h3 className="font-semibold text-xl mb-3">Proven Results</h3>
-              <p className="text-muted-foreground">Track record of successful transactions and satisfied clients</p>
+              <h3 className="font-semibold text-xl mb-3">Expert Team</h3>
+              <p className="text-muted-foreground">Experienced professionals dedicated to your project success</p>
             </AnimatedSection>
           </div>
         </div>
@@ -162,8 +162,8 @@ export default function Home() {
 
       {/* CTA Section */}
       <CTASection
-        title="Ready to Elevate Your Real Estate Business?"
-        description="Join our network of successful agents and property developers today."
+        title="Ready to Start Your Next Project?"
+        description="Let's bring your property development vision to life with our comprehensive services."
         ctaText="Get Started"
         ctaHref="/contact"
         backgroundImage={ctaBg}

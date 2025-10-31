@@ -4,8 +4,8 @@ import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
 import { Building2, Hammer, Home, FileText, Wrench, Scale, TreePine } from "lucide-react";
-import heroImage from '@assets/generated_images/Business_handshake_partnership_scene_9c3b6742.png';
-import ctaBg from '@assets/generated_images/City_skyline_sunset_panorama_a266ea56.png';
+import heroImage from '@assets/generated_images/Estate_management_property_image_35f5febd.png';
+import ctaBg from '@assets/generated_images/Land_development_aerial_view_2a250fe3.png';
 
 export default function Services() {
   const services = [
