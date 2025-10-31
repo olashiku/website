@@ -36,6 +36,11 @@ export default function ContactForm() {
       email: "",
       phone: "",
       serviceInterest: "",
+      location: "",
+      productType: "",
+      documentStatus: "",
+      transactionType: "",
+      additionalServices: "",
       message: "",
     },
   });
@@ -142,16 +147,135 @@ export default function ContactForm() {
           />
         </div>
 
+        {/* Project Details Section */}
+        <div className="border-t pt-6 mt-6">
+          <h3 className="text-lg font-semibold mb-4">Project Details</h3>
+          
+          <FormField
+            control={form.control}
+            name="location"
+            render={({ field }) => (
+              <FormItem className="mb-6">
+                <FormLabel>Your Location</FormLabel>
+                <FormControl>
+                  <Input placeholder="e.g., Lagos, Abuja, Port Harcourt" {...field} data-testid="input-location" />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <FormField
+              control={form.control}
+              name="productType"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Product Needed</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger data-testid="select-product">
+                        <SelectValue placeholder="Select product type" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="house">House 🏠</SelectItem>
+                      <SelectItem value="land">Land</SelectItem>
+                      <SelectItem value="commercial">Commercial Property</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="documentStatus"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Document Status</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger data-testid="select-document">
+                        <SelectValue placeholder="Select document status" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="with-documents">With Documents</SelectItem>
+                      <SelectItem value="without-documents">Without Documents</SelectItem>
+                      <SelectItem value="need-assistance">Need Assistance</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+            <FormField
+              control={form.control}
+              name="transactionType"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Transaction Type</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger data-testid="select-transaction">
+                        <SelectValue placeholder="Select transaction type" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="rent">Rent</SelectItem>
+                      <SelectItem value="outright-sale">Outright Sale</SelectItem>
+                      <SelectItem value="gv">Government Allocation (GV)</SelectItem>
+                      <SelectItem value="lease">Lease</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="additionalServices"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Additional Services</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger data-testid="select-additional">
+                        <SelectValue placeholder="Select additional services" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="property-management">Property Management</SelectItem>
+                      <SelectItem value="development">Development</SelectItem>
+                      <SelectItem value="surveying-analysis">Surveying Analysis</SelectItem>
+                      <SelectItem value="documentation">Documentation</SelectItem>
+                      <SelectItem value="all-services">All Services 🔌</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+        </div>
+
         <FormField
           control={form.control}
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Message</FormLabel>
+              <FormLabel>Additional Information</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Tell us about your needs..."
-                  className="min-h-[150px]"
+                  placeholder="Tell us more about your project requirements..."
+                  className="min-h-[120px]"
                   {...field}
                   data-testid="input-message"
                 />
@@ -160,6 +284,12 @@ export default function ContactForm() {
             </FormItem>
           )}
         />
+
+        <div className="bg-accent/30 p-4 rounded-lg">
+          <p className="text-sm text-muted-foreground text-center">
+            🏡 We assure quality services for all your real estate needs
+          </p>
+        </div>
 
         <Button type="submit" size="lg" className="w-full" disabled={submitMutation.isPending} data-testid="button-submit">
           {submitMutation.isPending ? "Sending..." : "Send Message"}
