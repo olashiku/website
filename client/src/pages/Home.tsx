@@ -6,7 +6,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
-import { TrendingUp, Users, BarChart3, Megaphone, Target } from "lucide-react";
+import { Building2, Hammer, Home as HomeIcon, FileText, Target, Users, BarChart3 } from "lucide-react";
 import heroImage from '@assets/generated_images/Modern_luxury_home_hero_1e61facd.png';
 import testimonial1 from '@assets/generated_images/Professional_woman_headshot_portrait_64c6baf6.png';
 import testimonial2 from '@assets/generated_images/Professional_man_headshot_portrait_c65913d1.png';
@@ -16,24 +16,24 @@ import ctaBg from '@assets/generated_images/City_skyline_sunset_panorama_a266ea5
 export default function Home() {
   const services = [
     {
-      icon: TrendingUp,
-      title: "Property Marketing",
-      description: "Maximize your property's visibility with comprehensive marketing strategies.",
+      icon: Building2,
+      title: "Building and Developing",
+      description: "Comprehensive building and development services from concept to completion with expert planning and construction management.",
     },
     {
-      icon: Users,
-      title: "Agent Networking",
-      description: "Connect with top real estate professionals in our exclusive network.",
+      icon: Hammer,
+      title: "Renovation & Construction Projects",
+      description: "Professional renovation and construction services for residential and commercial properties with quality workmanship.",
     },
     {
-      icon: BarChart3,
-      title: "Market Analysis",
-      description: "Get detailed insights and data-driven market analysis reports.",
+      icon: HomeIcon,
+      title: "Estate Management",
+      description: "Full-service estate management including property maintenance, tenant relations, and facilities oversight.",
     },
     {
-      icon: Megaphone,
-      title: "Digital Marketing",
-      description: "Leverage cutting-edge digital marketing to reach more buyers.",
+      icon: FileText,
+      title: "Sourcing and Land Documents",
+      description: "Expert assistance with land document procurement, title searches, and land registry services.",
     },
   ];
 
@@ -80,7 +80,7 @@ export default function Home() {
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">Our Services</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive real estate solutions tailored to your needs
+              From construction to estate management - complete property solutions
             </p>
           </AnimatedSection>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
