@@ -20,7 +20,7 @@ export default function CTASection({ title, description, ctaText, ctaHref, backg
               alt="CTA background"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-secondary/90" />
+            <div className="absolute inset-0 bg-black/65" />
           </div>
         </>
       )}
@@ -29,10 +29,10 @@ export default function CTASection({ title, description, ctaText, ctaHref, backg
       )}
       
       <div className="relative container mx-auto px-4 text-center z-10">
-        <h2 className="text-4xl md:text-5xl font-bold text-secondary-foreground mb-6" data-testid="text-cta-title">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 drop-shadow-lg" data-testid="text-cta-title" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.9)' }}>
           {title}
         </h2>
-        <p className="text-xl text-secondary-foreground/90 mb-8 max-w-2xl mx-auto" data-testid="text-cta-description">
+        <p className="text-xl text-white/95 mb-8 max-w-2xl mx-auto drop-shadow-md" data-testid="text-cta-description" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
           {description}
         </p>
         <Link href={ctaHref}>

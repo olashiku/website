@@ -31,20 +31,20 @@ export default function HeroSection({
           alt="Hero background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/60" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Content */}
       <div className="relative container mx-auto px-4 z-10">
         <div className={`max-w-3xl ${compact ? 'text-left' : 'text-center mx-auto'}`}>
-          <h1 className={`font-bold text-foreground mb-4 ${compact ? 'text-4xl md:text-5xl' : 'text-5xl md:text-7xl'}`} data-testid="text-hero-title">
+          <h1 className={`font-bold text-white mb-4 ${compact ? 'text-4xl md:text-5xl' : 'text-5xl md:text-7xl'} drop-shadow-lg`} data-testid="text-hero-title" style={{ textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
             {title}
           </h1>
-          <p className={`text-muted-foreground mb-8 ${compact ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'}`} data-testid="text-hero-subtitle">
+          <p className={`text-white/95 mb-8 ${compact ? 'text-lg md:text-xl' : 'text-xl md:text-2xl'} drop-shadow-md`} data-testid="text-hero-subtitle" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
             {subtitle}
           </p>
           {description && (
-            <p className="text-lg text-muted-foreground mb-8" data-testid="text-hero-description">
+            <p className="text-lg text-white/90 mb-8 drop-shadow-md" data-testid="text-hero-description" style={{ textShadow: '1px 1px 3px rgba(0,0,0,0.8)' }}>
               {description}
             </p>
           )}
@@ -60,7 +60,7 @@ export default function HeroSection({
               )}
               {secondaryCta && (
                 <Link href={secondaryCta.href}>
-                  <Button size="lg" variant="outline" className="text-lg px-8" data-testid="button-hero-secondary">
+                  <Button size="lg" variant="outline" className="text-lg px-8 bg-white hover:bg-white/90" data-testid="button-hero-secondary">
                     {secondaryCta.text}
                   </Button>
                 </Link>
@@ -69,7 +69,7 @@ export default function HeroSection({
           )}
 
           {trustIndicator && (
-            <p className="text-sm text-muted-foreground" data-testid="text-trust-indicator">
+            <p className="text-sm text-white/85 drop-shadow" data-testid="text-trust-indicator" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.8)' }}>
               {trustIndicator}
             </p>
           )}
