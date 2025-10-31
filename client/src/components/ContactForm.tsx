@@ -126,13 +126,13 @@ export default function ContactForm() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="property-marketing">Property Marketing</SelectItem>
-                    <SelectItem value="agent-networking">Agent Networking</SelectItem>
-                    <SelectItem value="market-analysis">Market Analysis</SelectItem>
-                    <SelectItem value="digital-marketing">Digital Marketing</SelectItem>
-                    <SelectItem value="property-listing">Property Listing</SelectItem>
-                    <SelectItem value="investment-matching">Investment Matching</SelectItem>
-                    <SelectItem value="event-coordination">Event Coordination</SelectItem>
+                    <SelectItem value="building-developing">Building and Developing</SelectItem>
+                    <SelectItem value="renovation-construction">Renovation & Construction Projects</SelectItem>
+                    <SelectItem value="estate-management">Estate Management</SelectItem>
+                    <SelectItem value="land-documents">Sourcing and Land Documents</SelectItem>
+                    <SelectItem value="equipment-tools">Equipment and Tools</SelectItem>
+                    <SelectItem value="land-scale">Land Scale</SelectItem>
+                    <SelectItem value="land-environment">Land & Environment Management</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>

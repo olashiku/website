@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ContactForm from "@/components/ContactForm";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-import heroImage from '@assets/generated_images/Business_handshake_partnership_scene_9c3b6742.png';
+import heroImage from '@assets/generated_images/Team_collaboration_hero_background_b9958d28.png';
 
 export default function Contact() {
   return (
@@ -13,8 +13,8 @@ export default function Contact() {
       <div className="pt-20">
         <HeroSection
           title="Get In Touch"
-          subtitle="We'd Love to Hear From You"
-          description="Whether you're looking to list a property, join our network, or learn more about our services, our team is here to help."
+          subtitle="Let's Build Your Vision Together"
+          description="Whether you're planning a construction project, need estate management, or require land services, our expert team is ready to help."
           backgroundImage={heroImage}
           compact
         />
