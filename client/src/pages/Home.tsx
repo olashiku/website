@@ -7,11 +7,11 @@ import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Building2, Hammer, Home as HomeIcon, FileText, Target, Users, BarChart3 } from "lucide-react";
-import heroImage from '@assets/generated_images/Construction_development_hero_image_66cd83fa.png';
+import heroImage from '@assets/generated_images/Minimalist_construction_hero_background_2acfe09c.png';
 import testimonial1 from '@assets/generated_images/Professional_woman_headshot_portrait_64c6baf6.png';
 import testimonial2 from '@assets/generated_images/Professional_man_headshot_portrait_c65913d1.png';
 import testimonial3 from '@assets/generated_images/Smiling_professional_woman_headshot_e4d46485.png';
-import ctaBg from '@assets/generated_images/Land_development_aerial_view_2a250fe3.png';
+import ctaBg from '@assets/generated_images/Clean_land_development_background_7b9767fa.png';
 
 export default function Home() {
   const services = [
