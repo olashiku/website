@@ -4,41 +4,41 @@ import HeroSection from "@/components/HeroSection";
 import TeamMemberCard from "@/components/TeamMemberCard";
 import CTASection from "@/components/CTASection";
 import { Target, Users, Award, TrendingUp } from "lucide-react";
-import heroImage from '@assets/generated_images/Real_estate_team_collaboration_87a0448f.png';
+import heroImage from '@assets/generated_images/Team_collaboration_hero_background_b9958d28.png';
 import team1 from '@assets/generated_images/Professional_man_headshot_portrait_c65913d1.png';
 import team2 from '@assets/generated_images/Professional_woman_headshot_portrait_64c6baf6.png';
 import team3 from '@assets/generated_images/Smiling_professional_woman_headshot_e4d46485.png';
-import ctaBg from '@assets/generated_images/City_skyline_sunset_panorama_a266ea56.png';
+import ctaBg from '@assets/generated_images/Residential_development_background_a86d33a0.png';
 
 export default function About() {
   const values = [
     {
       icon: Target,
-      title: "Integrity",
-      description: "We operate with honesty and transparency in every interaction",
+      title: "Quality",
+      description: "Superior workmanship and materials in every project we undertake",
     },
     {
       icon: TrendingUp,
       title: "Innovation",
-      description: "Constantly evolving our strategies to stay ahead of market trends",
+      description: "Embracing modern construction techniques and sustainable practices",
     },
     {
       icon: Award,
       title: "Excellence",
-      description: "Committed to delivering exceptional results for every client",
+      description: "Committed to exceeding industry standards in all our services",
     },
     {
       icon: Users,
-      title: "Client-Focused",
-      description: "Your success is our priority in everything we do",
+      title: "Reliability",
+      description: "On-time delivery and transparent communication throughout every project",
     },
   ];
 
   const team = [
     { name: "Michael Chen", role: "CEO & Founder", photo: team1 },
-    { name: "Sarah Johnson", role: "Director of Marketing", photo: team2 },
-    { name: "Emily Rodriguez", role: "Head of Agent Relations", photo: team3 },
-    { name: "David Thompson", role: "Chief Strategy Officer", photo: team1 },
+    { name: "Sarah Johnson", role: "Director of Construction", photo: team2 },
+    { name: "Emily Rodriguez", role: "Head of Estate Management", photo: team3 },
+    { name: "David Thompson", role: "Chief Development Officer", photo: team1 },
   ];
 
   return (
@@ -48,7 +48,7 @@ export default function About() {
       <div className="pt-20">
         <HeroSection
           title="About Rock City Home"
-          subtitle="Revolutionizing Real Estate Marketing Since 2015"
+          subtitle="Building Excellence in Construction & Property Development Since 2015"
           backgroundImage={heroImage}
           compact
         />
@@ -61,13 +61,13 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center">Our Story</h2>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
               <p className="text-lg leading-relaxed">
-                Founded in 2015, Rock City Home emerged from a simple vision: to transform how real estate professionals connect, collaborate, and succeed. What started as a small networking initiative has grown into a comprehensive platform serving hundreds of agents, developers, and property owners.
+                Founded in 2015, Rock City Home emerged from a simple vision: to provide comprehensive construction, development, and property management solutions with unwavering commitment to quality. What started as a small construction firm has grown into a full-service real estate development company.
               </p>
               <p className="text-lg leading-relaxed">
-                Our journey began when our founder, Michael Chen, recognized the gap between traditional real estate marketing and the digital age. He assembled a team of industry experts passionate about bridging this divide and creating meaningful connections in the real estate world.
+                Our journey began when our founder, Michael Chen, recognized the need for a company that could handle every aspect of property development—from land acquisition and documentation to construction and ongoing estate management. He assembled a team of experienced professionals passionate about building excellence.
               </p>
               <p className="text-lg leading-relaxed">
-                Today, we're proud to be a trusted partner for over 500 properties and 250+ agents, maintaining a 98% client satisfaction rate through our commitment to excellence and innovation.
+                Today, we're proud to have completed over 200 successful projects, managing a diverse portfolio of residential and commercial properties, and maintaining industry-leading standards in construction quality and environmental responsibility.
               </p>
             </div>
           </div>
@@ -80,7 +80,7 @@ export default function About() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Mission</h2>
             <p className="text-2xl text-muted-foreground leading-relaxed">
-              To revolutionize real estate marketing by creating meaningful connections between buyers, sellers, agents, and developers through innovative strategies and exceptional service.
+              To deliver superior construction, development, and property management services that exceed client expectations while maintaining the highest standards of quality, safety, and environmental responsibility.
             </p>
           </div>
         </div>
@@ -132,15 +132,15 @@ export default function About() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-8">Our Vision</h2>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              To be the premier platform where real estate professionals and property owners come together to create lasting value, transforming the industry one connection at a time. We envision a future where every property finds its perfect match through strategic marketing and genuine relationships.
+              To be the leading construction and property development company recognized for transforming communities through quality building, sustainable practices, and comprehensive property solutions. We envision creating developments that stand the test of time and enhance the lives of those who inhabit them.
             </p>
           </div>
         </div>
       </section>
 
       <CTASection
-        title="Join Our Growing Network"
-        description="Be part of a community that's reshaping real estate marketing."
+        title="Start Your Project With Us"
+        description="Experience the Rock City Home difference in construction and property development."
         ctaText="Get In Touch"
         ctaHref="/contact"
         backgroundImage={ctaBg}
