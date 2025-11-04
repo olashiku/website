@@ -21,7 +21,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 cursor-pointer" data-testid="link-home">
-            <img src={logo} alt="Rock City Home" className="h-12 md:h-16 w-auto object-contain" />
+            <img src={logo} alt="Rock City Home" className="h-16 md:h-20 w-auto object-contain" />
           </Link>
 
           {/* Desktop Navigation */}

@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import logo from "@assets/Transparent_Rock_City_logo_688bd04a-Photoroom_1762253278398.png";
+import logo from "@assets/generated_images/Rock_City_themed_logo_064591ac.png";
 
 export default function Footer() {
   const quickLinks = [
