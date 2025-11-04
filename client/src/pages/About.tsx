@@ -1,13 +1,9 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
-import TeamMemberCard from "@/components/TeamMemberCard";
 import CTASection from "@/components/CTASection";
 import { Target, Users, Award, TrendingUp } from "lucide-react";
 import heroImage from '@assets/generated_images/Team_collaboration_hero_background_b9958d28.png';
-import team1 from '@assets/generated_images/Professional_man_headshot_portrait_c65913d1.png';
-import team2 from '@assets/generated_images/Professional_woman_headshot_portrait_64c6baf6.png';
-import team3 from '@assets/generated_images/Smiling_professional_woman_headshot_e4d46485.png';
 import ctaBg from '@assets/generated_images/Residential_development_background_a86d33a0.png';
 
 export default function About() {
@@ -32,13 +28,6 @@ export default function About() {
       title: "Reliability",
       description: "On-time delivery and transparent communication throughout every project",
     },
-  ];
-
-  const team = [
-    { name: "Michael Chen", role: "CEO & Founder", photo: team1 },
-    { name: "Sarah Johnson", role: "Director of Construction", photo: team2 },
-    { name: "Emily Rodriguez", role: "Head of Estate Management", photo: team3 },
-    { name: "David Thompson", role: "Chief Development Officer", photo: team1 },
   ];
 
   return (
@@ -104,23 +93,6 @@ export default function About() {
                 <h3 className="font-semibold text-xl mb-3">{value.title}</h3>
                 <p className="text-muted-foreground">{value.description}</p>
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-24 bg-accent/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">Meet Our Team</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Experienced professionals dedicated to your success
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            {team.map((member) => (
-              <TeamMemberCard key={member.name} {...member} />
             ))}
           </div>
         </div>
