@@ -87,14 +87,6 @@ export default function Contact() {
                   </div>
                 </div>
               </div>
-
-              {/* Map Placeholder */}
-              <div className="bg-accent/50 rounded-2xl h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="mx-auto mb-2 text-muted-foreground" size={48} />
-                  <p className="text-muted-foreground">Map Integration Coming Soon</p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
