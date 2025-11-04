@@ -2,7 +2,7 @@ import { Link } from "wouter";
 import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
-import logo from "@assets/generated_images/Rock_City_Home_professional_logo_8a60a61a.png";
+import logo from "@assets/generated_images/Rock_City_transparent_logo_63e3011c.png";
 
 export default function Footer() {
   const quickLinks = [
@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className="mb-4">
-              <img src={logo} alt="Rock City Home" className="h-20 w-auto object-contain" />
+              <img src={logo} alt="Rock City Home" className="h-24 md:h-28 w-auto object-contain" />
             </div>
             <p className="text-secondary-foreground/80 mb-4">
               Your trusted partner in real estate marketing and professional networking.
