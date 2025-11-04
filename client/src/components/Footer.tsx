@@ -84,7 +84,7 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={20} className="mt-0.5 flex-shrink-0" />
-                <span className="text-secondary-foreground/80">14 Asajon Way, Off Lekki Epe Expressway, Sangotedo, Lagos, Nigeria</span>
+                <span className="text-secondary-foreground/80">No 4 Oke Ogboni street off lekki epe express way Sangotedo Lagos Nigeria.</span>
               </li>
             </ul>
           </div>

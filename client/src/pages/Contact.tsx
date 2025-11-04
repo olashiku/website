@@ -67,7 +67,7 @@ export default function Contact() {
                     <div>
                       <h4 className="font-semibold mb-1">Address</h4>
                       <p className="text-muted-foreground">
-                        14 Asajon Way, Off Lekki Epe Expressway<br />
+                          No 4 Oke Ogboni street off lekki epe express way<br />
                         Sangotedo, Lagos, Nigeria
                       </p>
                     </div>
