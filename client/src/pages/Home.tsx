@@ -8,9 +8,9 @@ import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Building2, Hammer, Home as HomeIcon, FileText, Target, Users, BarChart3 } from "lucide-react";
 import heroImage from '@assets/generated_images/Minimalist_construction_hero_background_2acfe09c.png';
-import testimonial1 from '@assets/generated_images/Professional_woman_headshot_portrait_64c6baf6.png';
-import testimonial2 from '@assets/generated_images/Professional_man_headshot_portrait_c65913d1.png';
-import testimonial3 from '@assets/generated_images/Smiling_professional_woman_headshot_e4d46485.png';
+import testimonial1 from '@assets/generated_images/Nigerian_businesswoman_professional_headshot_a49f7260.png';
+import testimonial2 from '@assets/generated_images/Nigerian_businessman_professional_headshot_e5c059ce.png';
+import testimonial3 from '@assets/generated_images/Nigerian_professional_woman_headshot_ab02d47d.png';
 import ctaBg from '@assets/generated_images/Clean_land_development_background_7b9767fa.png';
 
 export default function Home() {
@@ -40,19 +40,19 @@ export default function Home() {
   const testimonials = [
     {
       quote: "Rock City Home managed our entire construction project from permits to completion. Their professionalism and attention to detail exceeded our expectations.",
-      author: "Sarah Johnson",
+      author: "Funmilayo Adeyemi",
       role: "Property Owner",
       avatar: testimonial1,
     },
     {
       quote: "Their estate management services have been outstanding. Our properties are well-maintained and tenants are always satisfied. Highly recommend!",
-      author: "Michael Chen",
+      author: "Chukwuemeka Nnamdi",
       role: "Real Estate Developer",
       avatar: testimonial2,
     },
     {
       quote: "The land documentation and surveying services saved us months of hassle. They handled everything efficiently and professionally.",
-      author: "Emily Rodriguez",
+      author: "Chioma Okafor",
       role: "Property Investor",
       avatar: testimonial3,
     },
