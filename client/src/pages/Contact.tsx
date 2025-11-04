@@ -55,7 +55,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h4 className="font-semibold mb-1">Phone</h4>
-                      <p className="text-muted-foreground">(555) 123-4567</p>
+                      <a href="tel:+2347014668925" className="text-muted-foreground hover:text-primary" data-testid="link-contact-phone">07014668925</a>
                     </div>
                   </div>
 
@@ -66,8 +66,8 @@ export default function Contact() {
                     <div>
                       <h4 className="font-semibold mb-1">Address</h4>
                       <p className="text-muted-foreground">
-                        123 Main Street, Suite 100<br />
-                        Rock City, RC 12345
+                        14 Asajon Way, Off Lekki Epe Expressway<br />
+                        Sangotedo, Lagos, Nigeria
                       </p>
                     </div>
                   </div>
