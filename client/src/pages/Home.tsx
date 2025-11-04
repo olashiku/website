@@ -7,7 +7,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
-import { updateMetaTags, seoConfigs } from "@/lib/seo";
+import { updateMetaTags, seoConfigs } from "@/lib/seo.ts";
 import { Building2, Hammer, Home as HomeIcon, FileText, Target, Users, BarChart3 } from "lucide-react";
 import heroImage from '@assets/generated_images/Minimalist_construction_hero_background_2acfe09c.png';
 import testimonial1 from '@assets/generated_images/Nigerian_businesswoman_professional_headshot_a49f7260.png';

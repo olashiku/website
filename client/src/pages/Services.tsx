@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
-import { updateMetaTags, seoConfigs } from "@/lib/seo";
+import { updateMetaTags, seoConfigs } from "@/lib/seo.ts";
 import { Building2, Hammer, Home, FileText, Wrench, Scale, TreePine } from "lucide-react";
 import heroImage from '@assets/generated_images/Soft_property_management_background_2248a055.png';
 import ctaBg from '@assets/generated_images/Clean_land_development_background_7b9767fa.png';

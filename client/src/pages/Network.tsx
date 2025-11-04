@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import PropertyCard from "@/components/PropertyCard";
 import CTASection from "@/components/CTASection";
-import { updateMetaTags, seoConfigs } from "@/lib/seo";
+import { updateMetaTags, seoConfigs } from "@/lib/seo.ts";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import heroImage from '@assets/generated_images/Modern_luxury_home_hero_1e61facd.png';

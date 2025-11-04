@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ContactForm from "@/components/ContactForm";
-import { updateMetaTags, seoConfigs } from "@/lib/seo";
+import { updateMetaTags, seoConfigs } from "@/lib/seo.ts";
 import { Mail, Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import heroImage from '@assets/generated_images/Team_collaboration_hero_background_b9958d28.png';
