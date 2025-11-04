@@ -36,3 +36,18 @@ export const insertContactSubmissionSchema = createInsertSchema(contactSubmissio
 
 export type InsertContactSubmission = z.infer<typeof insertContactSubmissionSchema>;
 export type ContactSubmission = typeof contactSubmissions.$inferSelect;
+
+// AWS API Contact Form Schema
+export const awsContactFormSchema = z.object({
+  fullName: z.string().min(2, "Full name is required"),
+  email: z.string().email("Valid email is required"),
+  phoneNumber: z.string().min(10, "Valid phone number is required"),
+  interestType: z.string().min(1, "Interest type is required"),
+  budgetRange: z.string().min(1, "Budget range is required"),
+  preferredLocation: z.string().min(1, "Preferred location is required"),
+  message: z.string().min(10, "Message must be at least 10 characters"),
+  propertyType: z.string().min(1, "Property type is required"),
+  timeframe: z.string().min(1, "Timeframe is required"),
+});
+
+export type AwsContactFormValues = z.infer<typeof awsContactFormSchema>;

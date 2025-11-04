@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { insertContactSubmissionSchema } from "@shared/schema";
-import { z } from "zod";
+import { awsContactFormSchema, type AwsContactFormValues } from "@shared/schema";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -22,32 +21,43 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
-
-type ContactFormValues = z.infer<typeof insertContactSubmissionSchema>;
 
 export default function ContactForm() {
   const { toast } = useToast();
 
-  const form = useForm<ContactFormValues>({
-    resolver: zodResolver(insertContactSubmissionSchema),
+  const form = useForm<AwsContactFormValues>({
+    resolver: zodResolver(awsContactFormSchema),
     defaultValues: {
-      name: "",
+      fullName: "",
       email: "",
-      phone: "",
-      serviceInterest: "",
-      location: "",
-      productType: "",
-      documentStatus: "",
-      transactionType: "",
-      additionalServices: "",
+      phoneNumber: "",
+      interestType: "",
+      budgetRange: "",
+      preferredLocation: "",
       message: "",
+      propertyType: "",
+      timeframe: "",
     },
   });
 
   const submitMutation = useMutation({
-    mutationFn: async (data: ContactFormValues) => {
-      const response = await apiRequest("POST", "/api/contact", data);
+    mutationFn: async (data: AwsContactFormValues) => {
+      const response = await fetch(
+        "https://j39xx2lpv3.execute-api.us-east-1.amazonaws.com/Stage/web/rock-city-home",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+      
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || "Failed to send message");
+      }
+      
       return await response.json();
     },
     onSuccess: () => {
@@ -57,16 +67,16 @@ export default function ContactForm() {
       });
       form.reset();
     },
-    onError: () => {
+    onError: (error: Error) => {
       toast({
         title: "Error",
-        description: "Failed to send message. Please try again.",
+        description: error.message || "Failed to send message. Please try again.",
         variant: "destructive",
       });
     },
   });
 
-  const onSubmit = (data: ContactFormValues) => {
+  const onSubmit = (data: AwsContactFormValues) => {
     submitMutation.mutate(data);
   };
 
@@ -76,10 +86,10 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
             control={form.control}
-            name="name"
+            name="fullName"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Name</FormLabel>
+                <FormLabel>Full Name *</FormLabel>
                 <FormControl>
                   <Input placeholder="John Doe" {...field} data-testid="input-name" />
                 </FormControl>
@@ -93,7 +103,7 @@ export default function ContactForm() {
             name="email"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Email</FormLabel>
+                <FormLabel>Email *</FormLabel>
                 <FormControl>
                   <Input type="email" placeholder="john@example.com" {...field} data-testid="input-email" />
                 </FormControl>
@@ -106,12 +116,12 @@ export default function ContactForm() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <FormField
             control={form.control}
-            name="phone"
+            name="phoneNumber"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Phone</FormLabel>
+                <FormLabel>Phone Number *</FormLabel>
                 <FormControl>
-                  <Input placeholder="(555) 123-4567" {...field} data-testid="input-phone" />
+                  <Input placeholder="+234 801 234 5678" {...field} data-testid="input-phone" />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -120,24 +130,23 @@ export default function ContactForm() {
 
           <FormField
             control={form.control}
-            name="serviceInterest"
+            name="interestType"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Service Interest</FormLabel>
-                <Select onValueChange={field.onChange} defaultValue={field.value}>
+                <FormLabel>Interest Type *</FormLabel>
+                <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger data-testid="select-service">
-                      <SelectValue placeholder="Select a service" />
+                      <SelectValue placeholder="Select your interest" />
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
                     <SelectItem value="building-developing">Building and Developing</SelectItem>
-                    <SelectItem value="renovation-construction">Renovation & Construction Projects</SelectItem>
+                    <SelectItem value="renovation-construction">Renovation & Construction</SelectItem>
                     <SelectItem value="estate-management">Estate Management</SelectItem>
-                    <SelectItem value="land-documents">Sourcing and Land Documents</SelectItem>
-                    <SelectItem value="equipment-tools">Equipment and Tools</SelectItem>
-                    <SelectItem value="land-scale">Land Scale</SelectItem>
-                    <SelectItem value="land-environment">Land & Environment Management</SelectItem>
+                    <SelectItem value="land-documents">Land Documents & Sourcing</SelectItem>
+                    <SelectItem value="property-purchase">Property Purchase</SelectItem>
+                    <SelectItem value="property-rental">Property Rental</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
@@ -151,40 +160,16 @@ export default function ContactForm() {
         <div className="border-t pt-6 mt-6">
           <h3 className="text-lg font-semibold mb-4">Project Details</h3>
           
-          <FormField
-            control={form.control}
-            name="location"
-            render={({ field }) => (
-              <FormItem className="mb-6">
-                <FormLabel>Your Location</FormLabel>
-                <FormControl>
-                  <Input placeholder="e.g., Lagos, Abuja, Port Harcourt" {...field} data-testid="input-location" />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <FormField
               control={form.control}
-              name="productType"
+              name="preferredLocation"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Product Needed</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger data-testid="select-product">
-                        <SelectValue placeholder="Select product type" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      <SelectItem value="house">House 🏠</SelectItem>
-                      <SelectItem value="land">Land</SelectItem>
-                      <SelectItem value="commercial">Commercial Property</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
+                  <FormLabel>Preferred Location *</FormLabel>
+                  <FormControl>
+                    <Input placeholder="e.g., Lagos, Abuja, Port Harcourt" {...field} data-testid="input-location" />
+                  </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
@@ -192,20 +177,23 @@ export default function ContactForm() {
 
             <FormField
               control={form.control}
-              name="documentStatus"
+              name="propertyType"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Document Status</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormLabel>Property Type *</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
-                      <SelectTrigger data-testid="select-document">
-                        <SelectValue placeholder="Select document status" />
+                      <SelectTrigger data-testid="select-property">
+                        <SelectValue placeholder="Select property type" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="with-documents">With Documents</SelectItem>
-                      <SelectItem value="without-documents">Without Documents</SelectItem>
-                      <SelectItem value="need-assistance">Need Assistance</SelectItem>
+                      <SelectItem value="residential">Residential</SelectItem>
+                      <SelectItem value="commercial">Commercial</SelectItem>
+                      <SelectItem value="land">Land</SelectItem>
+                      <SelectItem value="apartment">Apartment</SelectItem>
+                      <SelectItem value="house">House</SelectItem>
+                      <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -214,24 +202,26 @@ export default function ContactForm() {
             />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FormField
               control={form.control}
-              name="transactionType"
+              name="budgetRange"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Transaction Type</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormLabel>Budget Range *</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
-                      <SelectTrigger data-testid="select-transaction">
-                        <SelectValue placeholder="Select transaction type" />
+                      <SelectTrigger data-testid="select-budget">
+                        <SelectValue placeholder="Select budget range" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="rent">Rent</SelectItem>
-                      <SelectItem value="outright-sale">Outright Sale</SelectItem>
-                      <SelectItem value="gv">Government Allocation (GV)</SelectItem>
-                      <SelectItem value="lease">Lease</SelectItem>
+                      <SelectItem value="under-5m">Under ₦5 Million</SelectItem>
+                      <SelectItem value="5m-10m">₦5 - ₦10 Million</SelectItem>
+                      <SelectItem value="10m-20m">₦10 - ₦20 Million</SelectItem>
+                      <SelectItem value="20m-50m">₦20 - ₦50 Million</SelectItem>
+                      <SelectItem value="50m-100m">₦50 - ₦100 Million</SelectItem>
+                      <SelectItem value="above-100m">Above ₦100 Million</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -241,22 +231,23 @@ export default function ContactForm() {
 
             <FormField
               control={form.control}
-              name="additionalServices"
+              name="timeframe"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Additional Services</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                  <FormLabel>Timeframe *</FormLabel>
+                  <Select onValueChange={field.onChange} value={field.value}>
                     <FormControl>
-                      <SelectTrigger data-testid="select-additional">
-                        <SelectValue placeholder="Select additional services" />
+                      <SelectTrigger data-testid="select-timeframe">
+                        <SelectValue placeholder="Select timeframe" />
                       </SelectTrigger>
                     </FormControl>
                     <SelectContent>
-                      <SelectItem value="property-management">Property Management</SelectItem>
-                      <SelectItem value="development">Development</SelectItem>
-                      <SelectItem value="surveying-analysis">Surveying Analysis</SelectItem>
-                      <SelectItem value="documentation">Documentation</SelectItem>
-                      <SelectItem value="all-services">All Services 🔌</SelectItem>
+                      <SelectItem value="immediately">Immediately</SelectItem>
+                      <SelectItem value="1-3-months">1-3 Months</SelectItem>
+                      <SelectItem value="3-6-months">3-6 Months</SelectItem>
+                      <SelectItem value="6-12-months">6-12 Months</SelectItem>
+                      <SelectItem value="over-1-year">Over 1 Year</SelectItem>
+                      <SelectItem value="just-browsing">Just Browsing</SelectItem>
                     </SelectContent>
                   </Select>
                   <FormMessage />
@@ -271,10 +262,10 @@ export default function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Additional Information</FormLabel>
+              <FormLabel>Message *</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Tell us more about your project requirements..."
+                  placeholder="Tell us more about your requirements..."
                   className="min-h-[120px]"
                   {...field}
                   data-testid="input-message"
