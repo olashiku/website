@@ -2,7 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import ContactForm from "@/components/ContactForm";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Facebook, Instagram } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import heroImage from '@assets/generated_images/Team_collaboration_hero_background_b9958d28.png';
 
 export default function Contact() {
@@ -85,6 +86,59 @@ export default function Contact() {
                       </p>
                     </div>
                   </div>
+                </div>
+              </div>
+
+              <div className="mt-8">
+                <h3 className="text-2xl font-bold mb-6">Connect With Us</h3>
+                <div className="space-y-4">
+                  <a 
+                    href="https://www.facebook.com/profile.php?id=61550313096017" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-card border border-card-border hover:bg-accent transition-colors"
+                    data-testid="link-facebook"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Facebook className="text-primary" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">Facebook</h4>
+                      <p className="text-sm text-muted-foreground">Follow us on Facebook</p>
+                    </div>
+                  </a>
+
+                  <a 
+                    href="https://www.instagram.com/rockycityreslestate" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-card border border-card-border hover:bg-accent transition-colors"
+                    data-testid="link-instagram"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Instagram className="text-primary" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">Instagram</h4>
+                      <p className="text-sm text-muted-foreground">@rockycityreslestate</p>
+                    </div>
+                  </a>
+
+                  <a 
+                    href="https://wa.me/2349133920447" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-lg bg-card border border-card-border hover:bg-accent transition-colors"
+                    data-testid="link-whatsapp"
+                  >
+                    <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <FaWhatsapp className="text-primary" size={24} />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">WhatsApp</h4>
+                      <p className="text-sm text-muted-foreground">+234 913 392 0447</p>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
