@@ -2,7 +2,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import logo from "@assets/Screenshot 2025-11-03 at 20.40.36_1762251289200.png";
+import logo from "@assets/generated_images/Transparent_Rock_City_logo_688bd04a.png";
 
 export default function Header() {
   const [location] = useLocation();
@@ -21,7 +21,9 @@ export default function Header() {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 cursor-pointer" data-testid="link-home">
-            <img src={logo} alt="Rock City Home" className="h-20 md:h-24 w-auto object-contain mix-blend-multiply dark:mix-blend-lighten" style={{filter: 'drop-shadow(0 0 0 transparent)'}} />
+            <div className="bg-background rounded-sm px-2">
+              <img src={logo} alt="Rock City Home" className="h-12 md:h-14 w-auto object-contain" />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
