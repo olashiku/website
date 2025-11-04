@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import PropertyCard from "@/components/PropertyCard";
 import CTASection from "@/components/CTASection";
+import { updateMetaTags, seoConfigs } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import heroImage from '@assets/generated_images/Modern_luxury_home_hero_1e61facd.png';
@@ -13,6 +14,10 @@ import property3 from '@assets/generated_images/Suburban_family_home_exterior_0e
 import ctaBg from '@assets/generated_images/City_skyline_sunset_panorama_a266ea56.png';
 
 export default function Network() {
+  useEffect(() => {
+    updateMetaTags(seoConfigs.network);
+  }, []);
+
   const [propertyType, setPropertyType] = useState("all");
   const [priceRange, setPriceRange] = useState("all");
   const [location, setLocation] = useState("all");

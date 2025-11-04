@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import BlogCard from "@/components/BlogCard";
+import { updateMetaTags, seoConfigs } from "@/lib/seo";
 import { Button } from "@/components/ui/button";
 import heroImage from '@assets/generated_images/City_skyline_sunset_panorama_a266ea56.png';
 import blogImage1 from '@assets/generated_images/Modern_luxury_home_hero_1e61facd.png';
@@ -10,6 +11,10 @@ import blogImage2 from '@assets/generated_images/Business_handshake_partnership_
 import blogImage3 from '@assets/generated_images/Real_estate_team_collaboration_87a0448f.png';
 
 export default function Blog() {
+  useEffect(() => {
+    updateMetaTags(seoConfigs.blog);
+  }, []);
+
   const [activeCategory, setActiveCategory] = useState("all");
 
   const categories = [

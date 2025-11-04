@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
@@ -6,6 +7,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import StatsSection from "@/components/StatsSection";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
+import { updateMetaTags, seoConfigs } from "@/lib/seo";
 import { Building2, Hammer, Home as HomeIcon, FileText, Target, Users, BarChart3 } from "lucide-react";
 import heroImage from '@assets/generated_images/Minimalist_construction_hero_background_2acfe09c.png';
 import testimonial1 from '@assets/generated_images/Nigerian_businesswoman_professional_headshot_a49f7260.png';
@@ -14,6 +16,10 @@ import testimonial3 from '@assets/generated_images/Nigerian_professional_woman_h
 import ctaBg from '@assets/generated_images/Clean_land_development_background_7b9767fa.png';
 
 export default function Home() {
+  useEffect(() => {
+    updateMetaTags(seoConfigs.home);
+  }, []);
+
   const services = [
     {
       icon: Building2,

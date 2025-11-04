@@ -1,12 +1,18 @@
+import { useEffect } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import CTASection from "@/components/CTASection";
+import { updateMetaTags, seoConfigs } from "@/lib/seo";
 import { Target, Users, Award, TrendingUp } from "lucide-react";
 import heroImage from '@assets/generated_images/Team_collaboration_hero_background_b9958d28.png';
 import ctaBg from '@assets/generated_images/Residential_development_background_a86d33a0.png';
 
 export default function About() {
+  useEffect(() => {
+    updateMetaTags(seoConfigs.about);
+  }, []);
+
   const values = [
     {
       icon: Target,
@@ -53,7 +59,7 @@ export default function About() {
                 Founded in 2015, Rock City Home emerged from a simple vision: to provide comprehensive construction, development, and property management solutions with unwavering commitment to quality. What started as a small construction firm has grown into a full-service real estate development company.
               </p>
               <p className="text-lg leading-relaxed">
-                Our journey began when our founder, Michael Chen, recognized the need for a company that could handle every aspect of property development—from land acquisition and documentation to construction and ongoing estate management. He assembled a team of experienced professionals passionate about building excellence.
+                Our journey began when our founder, Abari Ajibola, recognized the need for a company that could handle every aspect of property development—from land acquisition and documentation to construction and ongoing estate management. He assembled a team of experienced professionals passionate about building excellence.
               </p>
               <p className="text-lg leading-relaxed">
                 Today, we're proud to have completed over 200 successful projects, managing a diverse portfolio of residential and commercial properties, and maintaining industry-leading standards in construction quality and environmental responsibility.
