@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import CTASection from "@/components/CTASection";
-import { updateMetaTags, seoConfigs } from "@/lib/seo.ts";
+import { updateMetaTags, seoConfigs } from "../lib/seo";
 import { Target, Users, Award, TrendingUp } from "lucide-react";
 import heroImage from '@assets/generated_images/Team_collaboration_hero_background_b9958d28.png';
 import ctaBg from '@assets/generated_images/Residential_development_background_a86d33a0.png';

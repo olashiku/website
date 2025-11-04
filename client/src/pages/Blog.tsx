@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import BlogCard from "@/components/BlogCard";
-import { updateMetaTags, seoConfigs } from "@/lib/seo";
+import { updateMetaTags, seoConfigs } from "../lib/seo";
 import { Button } from "@/components/ui/button";
 import heroImage from '@assets/generated_images/City_skyline_sunset_panorama_a266ea56.png';
 import blogImage1 from '@assets/generated_images/Modern_luxury_home_hero_1e61facd.png';
