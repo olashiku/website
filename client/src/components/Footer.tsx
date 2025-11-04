@@ -1,5 +1,6 @@
 import { Link } from "wouter";
-import { Facebook, Instagram, Linkedin, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 
 export default function Footer() {
@@ -97,17 +98,14 @@ export default function Footer() {
             © 2025 Rock City Home. All rights reserved.
           </p>
           <div className="flex gap-4">
-            <a href="#" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors" data-testid="link-facebook">
+            <a href="https://www.facebook.com/profile.php?id=61550313096017" target="_blank" rel="noopener noreferrer" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors" data-testid="link-facebook">
               <Facebook size={20} />
             </a>
-            <a href="#" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors" data-testid="link-instagram">
+            <a href="https://www.instagram.com/rockycityreslestate?igsh=b3YzMXBuMXVsaHU4" target="_blank" rel="noopener noreferrer" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors" data-testid="link-instagram">
               <Instagram size={20} />
             </a>
-            <a href="#" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors" data-testid="link-linkedin">
-              <Linkedin size={20} />
-            </a>
-            <a href="#" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors" data-testid="link-twitter">
-              <Twitter size={20} />
+            <a href="https://api.whatsapp.com/send?phone=%2B2349133920447&context=AfcnDiXn3AUqc53CpYaqAhEzmFdJlnEGb7AbhNG9kYdmlTxA12QG3K9sY8caHCt9DzQuYxNcwfKh2onfjgCnkyCdD2cvSGW0y0eQ8P787iiPC6aVkxxyTnOtj7DZutDEdh2usDrCP2pk2XF1NMTRhpc&source=FB_Page&app=facebook&entry_point=page_cta" target="_blank" rel="noopener noreferrer" className="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors" data-testid="link-whatsapp">
+              <FaWhatsapp size={20} />
             </a>
           </div>
         </div>
