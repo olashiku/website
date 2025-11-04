@@ -82,11 +82,11 @@ export default function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <Phone size={20} className="mt-0.5 flex-shrink-0" />
-                <span className="text-secondary-foreground/80">(555) 123-4567</span>
+                <a href="tel:+2347014668925" className="text-secondary-foreground/80 hover:text-secondary-foreground" data-testid="link-phone">07014668925</a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={20} className="mt-0.5 flex-shrink-0" />
-                <span className="text-secondary-foreground/80">123 Main Street, Suite 100</span>
+                <span className="text-secondary-foreground/80">14 Asajon Way, Off Lekki Epe Expressway, Sangotedo, Lagos, Nigeria</span>
               </li>
             </ul>
           </div>
