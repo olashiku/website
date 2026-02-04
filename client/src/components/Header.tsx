@@ -12,8 +12,10 @@ export default function Header() {
     { path: "/", label: "Home" },
     { path: "/about", label: "About Us" },
     { path: "/services", label: "Services" },
+    { path: "/projects", label: "Projects" },
     { path: "/contact", label: "Contact Us" },
   ];
+
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
@@ -27,12 +29,11 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
-              <Link 
-                key={item.path} 
+              <Link
+                key={item.path}
                 href={item.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  location === item.path ? "text-primary" : "text-foreground"
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-primary ${location === item.path ? "text-primary" : "text-foreground"
+                  }`}
                 data-testid={`link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 {item.label}
@@ -61,12 +62,11 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 space-y-4 border-t border-border">
             {navItems.map((item) => (
-              <Link 
-                key={item.path} 
+              <Link
+                key={item.path}
                 href={item.path}
-                className={`block py-2 text-sm font-medium ${
-                  location === item.path ? "text-primary" : "text-foreground"
-                }`}
+                className={`block py-2 text-sm font-medium ${location === item.path ? "text-primary" : "text-foreground"
+                  }`}
                 onClick={() => setMobileMenuOpen(false)}
                 data-testid={`mobile-link-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
               >
